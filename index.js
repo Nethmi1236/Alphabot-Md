@@ -1,5 +1,4 @@
 /**
-
 	@ No Re Upload, recode sendiri base nya klo mau 😏
 	@ Sc no enc silahkan cek https://github.com/DikaArdnt/alpha-Morou
  
@@ -330,7 +329,7 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
             reply(lang.source())
             break
             case 'donasi': case 'donate':
-            //reply(lang.tos(ownernomer))
+            reply(lang.tos(ownernomer))
             var but = [
           {
             "urlButton": {
@@ -414,7 +413,7 @@ break
                 }
             }
             break
-            case 'mp3': case 'ytmp3':
+            case 'mp3': case 'song':
                 if (!q) return reply(lang.wrongFormat(prefix))
                 if (!isUrl(q)) return reply(lang.wrongFormat(prefix))
                 if (!q.includes('youtu.be') && !q.includes('youtube.com')) return reply(lang.wrongFormat(prefix))
@@ -425,7 +424,7 @@ break
                     txt += `*🎞️ Type :* ${data.medias[7].extension}\n`
                     txt += `*💾 Size :* ${data.medias[7].formattedSize}\n`
                     txt += `*📚 Url Source :* ${data.url}\n\n`
-                    txt += `*Mohon tunggu sebentar kak, sedang proses pengiriman...*`
+                    txt += `*ඔබගේ ගීතය Download කරමින් පවතී...*`
                     sendFileFromUrl(m.chat, data.thumbnail, txt, m)
                     alpha.sendMessage(m.chat, {audio: {url: data.medias[7].url}})
                 })
@@ -531,7 +530,7 @@ break
                     reply(lang.err())
                 })
             break
-            /*case 'mp4': case 'ytmp4':
+            /*case 'mp4': case 'video':
                 if (!q) return reply(lang.wrongFormat(prefix))
                 if (!isUrl(q)) return reply(lang.wrongFormat(prefix))
                 if (!q.includes('youtu.be') && !q.includes('youtube.com')) return reply(lang.wrongFormat(prefix))
@@ -542,7 +541,7 @@ break
                     txt += `*🎞️ Type :* ${data.medias[1].extension}\n`
                     txt += `*💾 Size :* ${data.medias[1].formattedSize}\n`
                     txt += `*📚 Url Source :* ${data.url}\n\n`
-                    txt += `*Mohon tunggu sebentar kak, sedang proses pengiriman...*`
+                    txt += `*ඔබගේ Videoව Download කරමින් පවතී...*`
                     sendFileFromUrl(from, data.thumbnail, txt, m)
                     sendFileFromUrl(from, data.medias[1].url, '', m)
                     
@@ -594,7 +593,7 @@ break
                 await alpha.groupAcceptInvite(result).then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
             }
             break
-            case 'tagall': case 'infoall':
+            case 'tgall': case 'infoall':
                 if (!m.isGroup) return reply(lang.groupOnly())
                 if (!isGroupAdmins) return reply(lang.adminOnly())
                 if (!isBotAdmins) return reply(lang.botNotAdmin())
@@ -871,7 +870,7 @@ case 'ownercmd': case'ownermenu':
           },
           {
             "quickReplyButton": {
-              "displayText": "𝐷𝑜𝑛𝑎𝑠𝑖",
+              "displayText": "𝐷𝑜𝑛??𝑠𝑖",
 "id": 'donate'
             }
           },
